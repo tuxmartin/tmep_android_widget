@@ -7,7 +7,8 @@
     <string name="navod">Pro použití přidejte na plochu widget.\nZ důvodu úspory přenosu dat nemá widget automatickou aktualizaci.\nAktualizaci provedete ťuknutím na widget.
         </string>
     <string name="info_o_zdroji">V aktuální verzi je zdroj dat \nhttp://teplomer.obechnanice.cz/json.php      </string>
-    <string name="info_o_autorovi"><a href="http://martin.vancl.eu/">© Bc. Martin Vancl</a></string>
+    <string name="info_o_autorovi"><a href="http://martin.vancl.eu/?source=tmep_android_widget">© Bc. Martin Vancl</a></string>
     <string name="btnSaveURL">Uložit</string>
+    <string name="tmep_adresa_popis">TMEP adresa:</string>
 
 </resources>

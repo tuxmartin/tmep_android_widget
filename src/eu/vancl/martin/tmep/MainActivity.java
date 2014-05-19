@@ -47,13 +47,9 @@ public class MainActivity extends Activity {
 		btnSave.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-			/*	Editor editor = prefs.edit();
-				editor.putString("url", (String) textURL.getText().toString());
-				editor.commit();
-				*/
 				prefs.edit().putString( "url", (String) textURL.getText().toString() ).commit();			
 				Toast.makeText(getApplicationContext(), 
-						"Nová adresa uložena.", Toast.LENGTH_LONG).show();
+						"Nová adresa uložena.", Toast.LENGTH_SHORT).show();
 			}			
 		});
 

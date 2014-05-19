@@ -25,30 +25,35 @@
         android:layout_alignParentLeft="true"
         android:text="@string/info_o_autorovi" />
 
-    <Button
-        android:id="@+id/btnSaveURL"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/autorWeb"
-        android:layout_alignLeft="@+id/autorWeb"
-        android:text="@string/btnSaveURL" />
-
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textURL"
-        android:layout_alignLeft="@+id/textURL"
-        android:text="TMEP adresa:" />
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="15dp"
+        android:text="@string/tmep_adresa_popis" />
 
     <EditText
         android:id="@+id/textURL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btnSaveURL"
-        android:layout_alignLeft="@+id/btnSaveURL"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_below="@+id/textView3"
         android:ems="10"
-        android:text="http://teplomer.obechnanice.cz/json.php" />
+        android:inputType="textUri" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/btnSaveURL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textURL"
+        android:layout_alignRight="@+id/textURL"
+        android:layout_below="@+id/textURL"
+        android:text="@string/btnSaveURL" />
 
 </RelativeLayout>
