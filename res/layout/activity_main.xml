@@ -25,12 +25,30 @@
         android:layout_alignParentLeft="true"
         android:text="@string/info_o_autorovi" />
 
-    <TextView
-        android:id="@+id/textView2"
+    <Button
+        android:id="@+id/btnSaveURL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_centerVertical="true"
-        android:text="@string/info_o_zdroji" />
+        android:layout_above="@+id/autorWeb"
+        android:layout_alignLeft="@+id/autorWeb"
+        android:text="@string/btnSaveURL" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textURL"
+        android:layout_alignLeft="@+id/textURL"
+        android:text="TMEP adresa:" />
+
+    <EditText
+        android:id="@+id/textURL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnSaveURL"
+        android:layout_alignLeft="@+id/btnSaveURL"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:text="http://teplomer.obechnanice.cz/json.php" />
 
 </RelativeLayout>
