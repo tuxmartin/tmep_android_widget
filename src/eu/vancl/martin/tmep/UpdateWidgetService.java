@@ -36,6 +36,11 @@ public class UpdateWidgetService extends IntentService {
 		Log.d("TMEP_URL", tmepURL);
 		DownloadAndParseJSON data = new DownloadAndParseJSON(tmepURL); // "http://teplomer.obechnanice.cz/json.php"
 		data.downloadAndParse();
+		
+		if (data.getChyba() != null) { // neco se nepovedlo
+			updateWidget( "ERROR\n" + data.getChyba() );
+			return;
+		}
 
 		//DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
 		try {

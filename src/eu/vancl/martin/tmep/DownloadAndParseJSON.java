@@ -19,6 +19,8 @@ public class DownloadAndParseJSON {
 	private String vlhkost;
 	private String casMereni;
 	
+	private String chyba;
+	
 	private String url;
 	
 	public void downloadAndParse() {		
@@ -51,10 +53,13 @@ public class DownloadAndParseJSON {
 			casMereni = jsonObject.getString("cas");			
 
 		} catch (MalformedURLException e) {
+			chyba = "MalformedURLException";
 			e.printStackTrace();
 		} catch (IOException e) {
+			chyba = "IOException";
 			e.printStackTrace();
 		} catch (JSONException e) {
+			chyba = "JSONException";
 			e.printStackTrace();
 		}	
 	}
@@ -94,6 +99,15 @@ public class DownloadAndParseJSON {
 	public void setUrl(String url) {
 		this.url = url;
 	}
+
+	public String getChyba() {
+		return chyba;
+	}
+
+	public void setChyba(String chyba) {
+		this.chyba = chyba;
+	}
+	
 	
 	
 
