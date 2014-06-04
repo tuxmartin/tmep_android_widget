@@ -1,6 +1,8 @@
 TMEP Android widget
 ===================
 
+#### [Aplikace ke stažení](https://github.com/tuxmartin/tmep_android_widget/releases)
+
 
 Pro použití přidejte na plochu widget.
 
