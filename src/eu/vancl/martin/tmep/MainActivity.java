@@ -38,7 +38,8 @@ public class MainActivity extends Activity {
 		if (tmepURL != null) {
 			textURL.setText(tmepURL);			
 		} else {
-			textURL.setText("http://teplomer.obechnanice.cz/vystup-json.php");
+			// teplomer.obechnanice.cz => "http://teplomer.obechnanice.cz/vystup-json.php"
+			textURL.setText("teplomer.obechnanice.cz");
 		}
 
 		btnSave = (Button) findViewById(R.id.btnSaveURL);
@@ -46,7 +47,16 @@ public class MainActivity extends Activity {
 		btnSave.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				prefs.edit().putString( "url", (String) textURL.getText().toString() ).commit();			
+				String url = (String) textURL.getText().toString();
+				//str1.toLowerCase().contains(str2.toLowerCase())
+				
+				if (	(url.toLowerCase().contains("http")) ||
+						(url.toLowerCase().contains("://"))  ||
+						(url.toLowerCase().contains(".php")) ) {
+					Toast.makeText(getApplicationContext(), 
+							"Chyba! Adresa musi byt bez HTTP a cesty k PHP souboru.", Toast.LENGTH_LONG).show();					
+				}
+				prefs.edit().putString( "url", url ).commit();			
 				Toast.makeText(getApplicationContext(), 
 						"Nová adresa uložena.", Toast.LENGTH_SHORT).show();
 			}			

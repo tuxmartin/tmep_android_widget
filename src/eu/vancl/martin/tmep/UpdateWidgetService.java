@@ -30,11 +30,13 @@ public class UpdateWidgetService extends IntentService {
 	protected void onHandleIntent(Intent arg0)  {
 		Log.d("UWS", "Update widget");
 		
-		prefs = getSharedPreferences("eu.vancl.martin.tmep", Context.MODE_PRIVATE);
+		prefs = getSharedPreferences("eu.vancl.martin.tmep", Context.MODE_PRIVATE);		
 		String tmepURL = prefs.getString("url", null);
+		// teplomer.obechnanice.cz => "http://teplomer.obechnanice.cz/vystup-json.php"
+		tmepURL = "http://" + tmepURL + "/vystup-json.php";
 
 		Log.d("TMEP_URL", tmepURL);
-		DownloadAndParseJSON data = new DownloadAndParseJSON(tmepURL); // "http://teplomer.obechnanice.cz/json.php"
+		DownloadAndParseJSON data = new DownloadAndParseJSON(tmepURL); // "http://teplomer.obechnanice.cz/vystup-json.php"
 		data.downloadAndParse();
 		
 		if (data.getChyba() != null) { // neco se nepovedlo
