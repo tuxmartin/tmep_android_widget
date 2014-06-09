@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.AlarmManager;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.view.Menu;
@@ -39,7 +38,7 @@ public class MainActivity extends Activity {
 		if (tmepURL != null) {
 			textURL.setText(tmepURL);			
 		} else {
-			textURL.setText("http://teplomer.obechnanice.cz/json.php");
+			textURL.setText("http://teplomer.obechnanice.cz/vystup-json.php");
 		}
 
 		btnSave = (Button) findViewById(R.id.btnSaveURL);
