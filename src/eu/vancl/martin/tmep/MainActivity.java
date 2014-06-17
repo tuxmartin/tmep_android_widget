@@ -19,6 +19,7 @@ public class MainActivity extends Activity {
 	private AlarmManager alarmManager;
 	private Button btnSave;
 	private TextView textURL;
+	private String defaultTempUrl = "teplomer.jicin.cz";
 
 	SharedPreferences prefs;
 	
@@ -34,14 +35,14 @@ public class MainActivity extends Activity {
 		textURL = (TextView) findViewById(R.id.textURL);
 
 		String tmepURL = prefs.getString("url", null);
-		
-		if (tmepURL != null) {
-			textURL.setText(tmepURL);			
-		} else {
-			// teplomer.jicin.cz => "http://teplomer.jicin.cz/vystup-json.php"
-			textURL.setText("teplomer.jicin.cz");
+		if (tmepURL == null) { // isEmpty() je az od Android API 9 (Android 2.3.x)
+			tmepURL = defaultTempUrl;		
+			prefs.edit().putString( "url", defaultTempUrl ).commit();
 		}
-
+		
+		// teplomer.jicin.cz => "http://teplomer.jicin.cz/vystup-json.php"
+		textURL.setText(tmepURL);
+		
 		btnSave = (Button) findViewById(R.id.btnSaveURL);
 		
 		btnSave.setOnClickListener(new OnClickListener() {
