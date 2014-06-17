@@ -49,7 +49,16 @@ public class UpdateWidgetService extends IntentService {
 			Date cas = df.parse(data.getCasMereni());
 			String hodiny = String.format("%02d", cas.getHours());
 			String minuty = String.format("%02d", cas.getMinutes());
-			updateWidget( data.getTeplota() + "°C\n" + data.getVlhkost() + "%\n" + hodiny + ":" + minuty );
+			
+			String teplotaVlhkost = "";
+			if (! (data.getTeplota().equals("null")) ) {
+				teplotaVlhkost += data.getTeplota() + "°C\n";				
+			}
+			if (! (data.getVlhkost().equals("null")) ) {
+				teplotaVlhkost += data.getVlhkost() + "%\n";				
+			}
+			
+			updateWidget( teplotaVlhkost + hodiny + ":" + minuty );
 			Log.i("UPDATE", "Aktualizuji widget.");
 		} catch (ParseException e) {
 			e.printStackTrace();
