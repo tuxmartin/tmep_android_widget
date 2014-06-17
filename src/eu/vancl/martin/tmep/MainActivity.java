@@ -38,8 +38,8 @@ public class MainActivity extends Activity {
 		if (tmepURL != null) {
 			textURL.setText(tmepURL);			
 		} else {
-			// teplomer.obechnanice.cz => "http://teplomer.obechnanice.cz/vystup-json.php"
-			textURL.setText("teplomer.obechnanice.cz");
+			// teplomer.jicin.cz => "http://teplomer.jicin.cz/vystup-json.php"
+			textURL.setText("teplomer.jicin.cz");
 		}
 
 		btnSave = (Button) findViewById(R.id.btnSaveURL);
