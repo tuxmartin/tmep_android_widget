@@ -25,15 +25,6 @@
         android:layout_alignParentLeft="true"
         android:text="@string/info_o_autorovi" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="15dp"
-        android:text="@string/tmep_adresa_popis" />
-
     <EditText
         android:id="@+id/textURL"
         android:layout_width="wrap_content"
@@ -55,5 +46,23 @@
         android:layout_alignRight="@+id/textURL"
         android:layout_below="@+id/textURL"
         android:text="@string/btnSaveURL" />
+
+    <TextView
+        android:id="@+id/textViewCasInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:text="@string/aktualizaceCasu"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textURL"
+        android:layout_below="@+id/textViewCasInfo"
+        android:layout_marginTop="18dp"
+        android:text="@string/tmep_adresa_popis" />
 
 </RelativeLayout>
