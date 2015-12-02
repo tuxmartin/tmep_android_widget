@@ -19,3 +19,7 @@ Pokud máte v provozu starou verzi TMEPu a nechcete aktualizovat, nakopírujte d
 
 
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/tuxmartin/tmep_android_widget/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
