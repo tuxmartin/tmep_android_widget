@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="eu.vancl.martin.tmep"
+    android:versionCode="22"
+    android:versionName="2018-04-27" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="10" />
+    <!-- 
+    Target *musi* byt 10 (2.3), protoze na novejsi Androidech je widget 1x1 pouze 40dp,
+    na 2.3 to bylo 72dp. Jinak to, co se vejde do 1x1 zabira zbytecne 2x2.
+    http://developer.android.com/guide/practices/ui_guidelines/widget_design.html#anatomy_determining_size
+     -->
+    
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <receiver android:name="MyWidget">
+            <intent-filter>                
+               <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>                
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget"/>          
+        </receiver>
+        <service android:name="UpdateWidgetService"></service>
+        
+    </application>
+
+</manifest>
