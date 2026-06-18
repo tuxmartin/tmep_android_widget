@@ -1,19 +1,28 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+}
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "27.0.3"
+    namespace 'eu.vancl.martin.tmep'
+    compileSdk 35
 
     defaultConfig {
         applicationId "eu.vancl.martin.tmep"
-        minSdkVersion 8
-        targetSdkVersion 10
+        minSdk 23
+        targetSdk 35
+        versionCode 23
+        versionName "2026-06-18"
     }
 
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 }

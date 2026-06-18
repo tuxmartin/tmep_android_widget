@@ -19,7 +19,7 @@ public class MainActivity extends Activity {
 	private AlarmManager alarmManager;
 	private Button btnSave;
 	private TextView textURL;
-	private String defaultTmepUrl = "http://www.tmep.cz/vystup-json.php?id=1183&export_key=2yfj1goirz";
+	private String defaultTmepUrl = "https://www.tmep.cz/vystup-json.php?id=1183&export_key=2yfj1goirz";
 
 	SharedPreferences prefs;
 	

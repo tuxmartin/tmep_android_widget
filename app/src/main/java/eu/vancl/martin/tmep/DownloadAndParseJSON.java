@@ -1,13 +1,13 @@
 package eu.vancl.martin.tmep;
 
 import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.apache.http.util.ByteArrayBuffer;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -32,7 +32,7 @@ public class DownloadAndParseJSON {
 			httpConn.connect();
 			InputStream in = httpConn.getInputStream();
 			BufferedInputStream bis = new BufferedInputStream(in);
-			ByteArrayBuffer baf = new ByteArrayBuffer(1000);
+			ByteArrayOutputStream baf = new ByteArrayOutputStream(1000);
 			int read = 0;
 			int bufSize = 1024;
 			byte[] buffer = new byte[bufSize];
@@ -41,7 +41,7 @@ public class DownloadAndParseJSON {
 				if (read == -1) {
 					break;
 				}
-				baf.append(buffer, 0, read);
+				baf.write(buffer, 0, read);
 			}
 			String queryResult = new String(baf.toByteArray());
 
